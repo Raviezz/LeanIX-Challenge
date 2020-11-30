@@ -1,0 +1,49 @@
+mutation{
+    deleteItem(id:6)
+}
+
+mutation{
+    createItem(input:{name:"My First Item",listId:5}){
+      id
+      name
+      listId
+      position
+    }
+}
+
+mutation {
+    createList(name:"In Progress",description:"This is second"){
+      id
+      name
+      description
+      position
+    }
+}
+
+
+query{
+   lists {
+     id
+     name
+     description
+     position
+     items{
+       id
+       name
+       position
+       listId
+     }
+   }
+ }
+
+mutation {
+    updateList(id:1,name:"Yet To Start"){
+      id
+      name
+      position
+    }
+}
+
+mutation {
+   deleteList(id:2)
+}
